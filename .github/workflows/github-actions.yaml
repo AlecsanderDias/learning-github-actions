@@ -21,6 +21,7 @@ jobs:
   Continuando-A-Explorar:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "Agora deveria funcionar"
       - name: Mostrando a máquina que está rodando
         run: echo "Sistema Operacional da máquina -> ${{runner.os}}"
       - name: Listar os arquivos no repositório
