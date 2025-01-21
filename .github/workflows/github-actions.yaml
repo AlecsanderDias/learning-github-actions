@@ -25,4 +25,4 @@ jobs:
         run: echo "Sistema Operacional da máquina -> ${{runner.os}}"
       - name: Listar os arquivos no repositório
         run: | 
-        ls ${{github.workspace}}.
+          ls ${{ github.workspace }}
