@@ -1,0 +1,16 @@
+name: GitHub Actions em ação
+run-name: ${{ github.actor }} estou testando o Github Actions
+on: [push]
+jobs:
+  Explorando-GitHub-Actions:
+  runs-on: ubuntu-latest
+  steps:
+    - run: echo "Testando o githubActions que começou por causa de um ${{ github.event_name }}, hospedado em um ${{runner.os}} pelo próprio Github"
+    - run: echo "Branch -> ${{github.ref}} Repositório -> ${{github.repository}}."
+    - name: Checando o repositório do código
+      uses: actions/checkout@v3
+    - run: echo "O repositório ${{github.repository}} foi clonado para a nova máquina"
+    - name: Listar os arquivos no repositório
+      run: | 
+        ls ${{github.workspace}}
+    - run: echo "Status do Job -> ${{job.status}}."
