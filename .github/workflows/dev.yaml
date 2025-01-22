@@ -1,0 +1,15 @@
+name: Github Actions 2
+run-name: ${{github.actor}} está testando um segundo actions
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  Executar-Job-Dev:
+    runs-on:  ubuntu-latest
+    steps:
+      - name: Utilizando a branch ${{github.ref}}
+        run: echo "O ${{github.event_name}} gerou este passso."
+      - name: Finalizado os steps
+        run: echo "Status dos steps ${{job.status}}"
