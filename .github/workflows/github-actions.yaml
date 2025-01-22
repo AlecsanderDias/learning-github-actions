@@ -1,6 +1,10 @@
 name: GitHub Actions em ação
 run-name: ${{ github.actor }} estou testando o Github Actions
-on: [push]
+on: 
+  push:
+    branches:
+      - main
+
 jobs:
   Explorando-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -14,3 +18,12 @@ jobs:
         run: | 
           ls ${{github.workspace}}
       - run: echo "Status do Job -> ${{job.status}}."
+  Continuando-A-Explorar:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Agora deveria funcionar"
+      - name: Mostrando a máquina que está rodando
+        run: echo "Sistema Operacional da máquina -> ${{runner.os}}"
+      - name: Listar os arquivos no repositório
+        run: | 
+          ls ${{ github.workspace }}
